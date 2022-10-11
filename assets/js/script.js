@@ -8,13 +8,13 @@ var words = message.split(' ');
 function countdown() {
   var timeLeft = 5;
 
-  // TODO: Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
   var timeInterval = setInterval(function () {
     mainEl.textContent = timeLeft
     timeLeft--
-    //
-    // YOUR CODE HERE
-    //
+    if (timeLeft < 0) {
+      clearInterval(timeInterval)
+      displayMessage()
+    }
   }, 1000);
 }
 
